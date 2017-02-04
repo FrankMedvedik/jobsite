@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\\sp01.reckner.com\c$\inetpub\wwwroot\production" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Test.aspx" publishTime="04/17/2012 15:00:19" />
+    <file relUrl="Invoice/images/edit.gif" publishTime="10/03/2011 13:39:46" />
+    <file relUrl="bin/Microsoft.ReportViewer.Common.dll" publishTime="06/28/2011 01:35:08" />
+    <file relUrl="TimeEntry/TimeEntry.aspx" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Invoice/css/portal.css" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="bin/Production.dll" publishTime="10/17/2016 16:56:37" />
+    <file relUrl="bin/Microsoft.ReportViewer.WebForms.dll" publishTime="06/28/2011 01:35:08" />
+    <file relUrl="Job/js/job_scripts.js" publishTime="03/07/2012 14:13:07" />
+    <file relUrl="Invoice/production_print.aspx" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="TimeEdit/xml/hour_type.xml" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Invoice/images/delete.gif" publishTime="10/03/2011 13:39:46" />
+    <file relUrl="Invoice/js/smartDrop.js" publishTime="10/03/2011 13:39:46" />
+    <file relUrl="TimeEdit/TimeEditEmployee.aspx" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Job/js/smartDrop.js" publishTime="02/29/2012 15:05:47" />
+    <file relUrl="TimeEntry/js/smartDrop.js" publishTime="10/03/2011 13:39:46" />
+    <file relUrl="TimeEdit/TimeEditJob.aspx" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Job/images/delete.gif" publishTime="02/29/2012 15:05:47" />
+    <file relUrl="Deposit/images/delete.gif" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Job/Job.aspx" publishTime="02/12/2015 10:30:35" />
+    <file relUrl="bin/Production.pdb" publishTime="10/17/2016 16:56:37" />
+    <file relUrl="Invoice/images/dn.gif" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="TimeEdit/images/edit.gif" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="TimeEntry/css/portal.css" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Invoice/images/up.gif" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Job/css/portal.css" publishTime="03/14/2012 11:44:16" />
+    <file relUrl="calpop.aspx" publishTime="03/07/2012 14:25:08" />
+    <file relUrl="Job/client.aspx" publishTime="02/29/2012 15:05:47" />
+    <file relUrl="Job/schema/newJob.xml" publishTime="03/02/2012 10:08:40" />
+    <file relUrl="Job/images/edit.gif" publishTime="02/29/2012 15:05:47" />
+    <file relUrl="Deposit/Deposits.aspx" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="bin/Production.xml" publishTime="10/17/2016 16:56:37" />
+    <file relUrl="TimeEdit/css/portal.css" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Deposit/css/portal.css" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="bin/Microsoft.ReportViewer.WebForms.xml" publishTime="03/03/2010 21:11:32" />
+    <file relUrl="Invoice/xml/accounts.xml" publishTime="02/09/2015 12:02:43" />
+    <file relUrl="TimeEdit/images/delete.gif" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Invoice/InvoiceList.aspx" publishTime="03/02/2012 10:55:54" />
+    <file relUrl="Job/joblist.aspx" publishTime="02/29/2012 15:05:47" />
+    <file relUrl="Deposit/images/edit.gif" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="Job/clientlist.aspx" publishTime="03/02/2012 10:10:09" />
+    <file relUrl="Web.config" publishTime="10/17/2016 16:32:10" />
+    <file relUrl="Invoice/CreateInvoice.aspx" publishTime="04/15/2016 11:06:26" />
+    <file relUrl="Invoice/xml/invoiceSort.xslt" publishTime="02/29/2012 15:05:46" />
+    <file relUrl="TimeEdit/js/smartDrop.js" publishTime="02/29/2012 15:05:46" />
+  </publishProfile>
+</publishData>

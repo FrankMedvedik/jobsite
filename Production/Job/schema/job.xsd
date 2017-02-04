@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- edited with XMLSPY v5 rel. 2 U (http://www.xmlspy.com) by David Reckner (private) -->
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by David Michael Reckner (private) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sql="urn:schemas-microsoft-com:mapping-schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="job" sql:relation="joblog" sql:key-fields="jobnum">
+		<xs:annotation>
+			<xs:documentation>job</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="num" sql:field="jobnum" />
+				<xs:element name="clientid" sql:field="clientid" />
+				<xs:element name="client" sql:relation="clients" sql:key-fields="clientid">
+					<xs:annotation>
+						<xs:appinfo>
+							<sql:relationship parent="joblog" parent-key="clientid" child="clients" child-key="clientid" />
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" sql:field="clientname" />
+							<xs:element name="address" minOccurs="0" sql:field="address" />
+							<xs:element name="city" minOccurs="0" sql:field="city" />
+							<xs:element name="state" minOccurs="0" sql:field="state" />
+							<xs:element name="zip" minOccurs="0" sql:field="zip" />
+							<xs:element name="attention" minOccurs="0" sql:field="attention" />
+							<xs:element name="phone" minOccurs="0" sql:field="phone" />
+							<xs:element name="fax" minOccurs="0" sql:field="fax" />
+							<xs:element name="country" minOccurs="0" sql:field="country" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="name" minOccurs="0" sql:field="jobname" />
+				<xs:element name="active" sql:field="active" />
+				<xs:element name="primary_method" minOccurs="0" sql:field="priMethod" />
+				<xs:element name="second_method" minOccurs="0" sql:field="scdMethod" />
+				<xs:element name="start_date" minOccurs="0" sql:field="started" />
+				<xs:element name="end_date" minOccurs="0" sql:field="ended" />
+				<xs:element name="project_manager" minOccurs="0" sql:field="projmgr" />
+				<xs:element name="assistant_manager" minOccurs="0" sql:field="scdprjmgr" />
+				<xs:element name="production_rate" minOccurs="0" sql:field="prodrate" />
+				<xs:element name="total_value" minOccurs="0" sql:field="total" />
+				<xs:element name="location_code" minOccurs="0" sql:field="location" />
+				<xs:element name="client_job_num" minOccurs="0" sql:field="[client job #]" />
+				<xs:element name="po_num" minOccurs="0" sql:field="[po #]" />
+				<xs:element name="product_code" minOccurs="0" sql:field="product" />
+				<xs:element name="master_job_num" minOccurs="0" sql:field="ref_jobs" />
+				<xs:element name="invoice_num" minOccurs="0" sql:field="invoice" />
+				<xs:element name="job_detail" maxOccurs="unbounded" sql:relation="joblogdtl" sql:key-fields="dtl_id">
+					<xs:annotation>
+						<xs:appinfo>
+							<sql:relationship parent="joblog" parent-key="jobnum" child="joblogdtl" child-key="jobnum" />
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" sql:field="dtl_id" minOccurs="0" />
+							<xs:element name="part" sql:field="part" />
+							<xs:element name="incidence" minOccurs="0" sql:field="incidence" />
+							<xs:element name="quota" minOccurs="0" sql:field="quota" />
+							<xs:element name="hours" minOccurs="0" sql:field="hours" />
+							<xs:element name="cpi" minOccurs="0" sql:field="cpi" />
+							<xs:element name="coop" minOccurs="0" sql:field="coop" />
+							<xs:element name="length" minOccurs="0" sql:field="length" />
+							<xs:element name="ext" minOccurs="0" sql:field="ext" />
+							<xs:element name="shift" minOccurs="0" sql:field="shift" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="note" minOccurs="0" maxOccurs="unbounded" sql:relation="notes" sql:key-fields="notes_id">
+					<xs:annotation>
+						<xs:appinfo>
+							<sql:relationship parent="joblog" parent-key="jobnum" child="notes" child-key="jobnum" />
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="note_id" minOccurs="0" sql:field="notes_id" />
+							<xs:element name="note_date" sql:field="date" />
+							<xs:element name="note_text" minOccurs="0" sql:field="notes" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

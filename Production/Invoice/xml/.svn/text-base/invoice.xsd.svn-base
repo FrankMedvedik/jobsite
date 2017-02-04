@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by David Michael Reckner (private) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sql="urn:schemas-microsoft-com:mapping-schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="invoice" sql:relation="invoice" sql:key-fields="invoice_id">
+		<xs:annotation>
+			<xs:documentation>Invoice Document</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:int" sql:field="invoice_id" />
+				<xs:element name="number" type="xs:string" sql:field="invoice_number" />
+				<xs:element name="date" type="xs:date" sql:field="invoice_date" />
+				<xs:element name="client_id" type="xs:string" sql:field="client_id" />
+				<xs:element name="customer" minOccurs="1" sql:relation="vwCustomer" sql:key-fields="customer_id">
+					<xs:annotation>
+						<xs:appinfo>
+							<sql:relationship parent="invoice" parent-key="customer_id" child="vwCustomer" child-key="customer_id" />
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="custid" type="xs:string" minOccurs="1" sql:field="customer_id" />
+							<xs:element name="name" type="xs:string" minOccurs="1" sql:field="customer_name" />
+							<xs:element name="address_one" type="xs:string" minOccurs="0" sql:field="customer_address_one" />
+							<xs:element name="address_two" type="xs:string" minOccurs="0" sql:field="customer_address_two" />
+							<xs:element name="city" type="xs:string" minOccurs="0" sql:field="customer_city" />
+							<xs:element name="state" type="xs:string" minOccurs="0" sql:field="customer_state" />
+							<xs:element name="zip" type="xs:string" minOccurs="0" sql:field="customer_zip" />
+							<xs:element name="country" type="xs:string" minOccurs="0" sql:field="customer_country" />
+							<xs:element name="phone" type="xs:string" minOccurs="0" sql:field="customer_phone" />
+							<xs:element name="fax" type="xs:string" minOccurs="0" sql:field="customer_fax" />
+							<xs:element name="email" type="xs:string" minOccurs="0" sql:field="customer_email" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="terms" type="xs:string" sql:field="terms" />
+				<xs:element name="type" type="xs:string" sql:field="invoice_type" />
+				<xs:element name="approved" type="xs:boolean" sql:field="approved" />
+				<xs:element name="printed" type="xs:boolean" sql:field="printed" />
+				<xs:element name="exported" type="xs:boolean" sql:field="exported" />
+				<xs:element name="jra_job_num" type="xs:int" sql:field="jra_job_num" />
+				<xs:element name="client_job_num" type="xs:string" minOccurs="0" sql:field="client_job_num" />
+				<xs:element name="po_num" type="xs:string" minOccurs="0" sql:field="po_num" />
+				<xs:element name="attention" type="xs:string" minOccurs="0" sql:field="attention" />
+				<xs:element name="job_description" type="xs:string" minOccurs="0" sql:field="job_description" />
+				<xs:element name="instructions" type="xs:string" sql:field="instructions"/>
+				<xs:element name="study_dates" type="xs:string" minOccurs="0" sql:field="study_dates" />
+				<xs:element name="detail" maxOccurs="unbounded" sql:relation="InvoiceDetail" sql:key-fields="detail_id">
+					<xs:annotation>
+						<xs:appinfo>
+							<sql:relationship parent="invoice" parent-key="invoice_id" child="InvoiceDetail" child-key="invoice_id" />
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:int" minOccurs="0" sql:field="detail_id" />
+							<xs:element name="order" type="xs:int" minOccurs="0" sql:field="detail_order" />
+							<xs:element name="show" type="xs:boolean" minOccurs="0" sql:field="show_on_invoice" />
+							<xs:element name="category" type="xs:string" minOccurs="0" sql:field="category" />
+							<xs:element name="account" type="xs:string" minOccurs="0" sql:field="account_num" />
+							<xs:element name="task" type="xs:string" minOccurs="0" sql:field="task" />
+							<xs:element name="department" type="xs:string" minOccurs="0" sql:field="department" />
+							<xs:element name="quantity" type="xs:decimal" minOccurs="0" sql:field="quantity" />
+							<xs:element name="line_description" type="xs:string" minOccurs="0" sql:field="line_description" />
+							<xs:element name="price" type="xs:decimal" minOccurs="0" sql:field="price" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="deposit" minOccurs="0" maxOccurs="unbounded" sql:relation="Deposits" sql:key-fields="id">
+					<xs:annotation>
+						<xs:appinfo>
+							<sql:relationship parent="invoice" parent-key="jra_job_num" child="Deposits" child-key="JobNum" />
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:int" minOccurs="0" sql:field="id" />
+							<xs:element name="check_num" type="xs:string" minOccurs="0" sql:field="Check#" />
+							<xs:element name="check_date" type="xs:date" minOccurs="0" sql:field="Date" />
+							<xs:element name="check_description" type="xs:string" minOccurs="0" sql:field="Description" />
+							<xs:element name="check_amount" type="xs:decimal" minOccurs="0" sql:field="Amount" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
